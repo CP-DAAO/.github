@@ -6,6 +6,36 @@ This system addresses challenges such as low voter turnout and malicious proposa
 
 ## Main Features
 
+```mermaid
+graph TD
+    style DAAO fill:#f9f
+
+    subgraph DAAO
+        D[AA Wallet] <--> H[AI]
+    end
+
+    subgraph Governance
+        B[Governor]
+        C[Timelock]
+    end
+
+    A[Proposal]
+
+    DAAO -->|1-1. Vote| A
+
+    DAAO -->|2-1. Check| A
+    DAAO -->|2-2. Pause| C
+
+    B -->|submits| A
+    A -->|executes| C
+
+    linkStyle 1 stroke:#00f
+    linkStyle 2 stroke:#f00
+    linkStyle 3 stroke:#f00
+    linkStyle 4 stroke-dasharray: 5,5;
+    linkStyle 5 stroke-dasharray: 5,5;
+```
+
 **AI-Driven Automated Voting System**: Automatically analyzes user preferences through on-chain activity and social media data, predicting and casting votes on behalf of users. This system ensures continuous participation, reducing the risks associated with low voter turnout and malicious proposals.
 
 **AI-Based Proposal Validation**: Implements an AI validation step post-vote to ensure alignment between community sentiment and vote outcomes. If discrepancies are detected, the proposal execution is paused, allowing for further discussion and preventing potential harm.
