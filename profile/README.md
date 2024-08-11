@@ -1,6 +1,7 @@
 # DAAO: Decentralized AI-Powered Autonomous Organization
 
 Welcome to DAAO, a cutting-edge Decentralized AI-Powered Autonomous Organization that aims to transform blockchain governance by integrating AI for enhanced security, reliability, and community engagement.
+
 This system addresses challenges such as low voter turnout and malicious proposals, ensuring robust and reliable decision-making.
 
 
@@ -53,12 +54,14 @@ DAAO's ecosystem includes various projects and smart contracts focused on enhanc
 ### 🤖 AI
 
 **Predictive Voting through AA**: [https://github.com/CP-DAAO/DAAO-AA](https://github.com/CP-DAAO/DAAO-AA)
+
 **AI-powered Proposal Execution Checker**: [https://github.com/CP-DAAO/DAAO-judge](https://github.com/CP-DAAO/DAAO-judge)
 
 
 ### ⚙️ Contracts
 
 **Governor Contracts**: [https://github.com/CP-DAAO/DAAO-contracts](https://github.com/CP-DAAO/DAAO-contracts)
+
 **Account Abstraction Wallet**: [https://github.com/CP-DAAO/DAAO-AA](https://github.com/CP-DAAO/DAAO-AA)
 
 
