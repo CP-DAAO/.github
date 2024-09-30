@@ -9,32 +9,53 @@ This system addresses challenges such as low voter turnout and malicious proposa
 
 ```mermaid
 graph TD
-    style DAAO fill:#f9f
-
-    subgraph DAAO
-        D[AA Wallet] <--> H[AI]
-    end
-
     subgraph Governance
         B[Governor]
         C[Timelock]
+        A[Proposal A]
+        E[Proposal B]
     end
 
-    A[Proposal]
+    D[AA Wallet]
+    H[AI Agent]
+    I[AI]
 
-    DAAO -->|1-1. Vote| A
+    subgraph DAAO
+        I
+        H    
+        subgraph User
+            H
+            D
+        end
+    end
 
-    DAAO -->|2-1. Check| A
-    DAAO -->|2-2. Pause| C
+    H --> D
 
-    B -->|submits| A
-    A -->|executes| C
+    H <-->|1-1: Check| A
+    D -->|1-2: Vote| A
 
-    linkStyle 1 stroke:#00f
+    I <-->|2-1: Check| A
+    I -->|2-2-A: Pass| C
+    I -->|2-2-B: Block| C
+
+    B -->|0: Submit| A
+    A -->|3-A: Execute| C
+
+    B --> |3-B-1: Submit| E
+    E --> |3-B-2: Execute| C
+    C --> |3-B-3: Reactivate| A
+    A -->|3-B-4: Execute| C
+
+    linkStyle 0 stroke:#f00
+    linkStyle 1 stroke:#f00
     linkStyle 2 stroke:#f00
-    linkStyle 3 stroke:#f00
-    linkStyle 4 stroke-dasharray: 5,5;
     linkStyle 5 stroke-dasharray: 5,5;
+    linkStyle 6 stroke:#00f
+    linkStyle 7 stroke:#00f
+    linkStyle 8 stroke:#00f
+    linkStyle 9 stroke:#00f
+    linkStyle 10 stroke-dasharray: 5,5;
+    linkStyle 11 stroke:#00f
 ```
 
 **AI-Driven Automated Voting System**: Automatically analyzes user preferences through on-chain activity and social media data, predicting and casting votes on behalf of users. This system ensures continuous participation, reducing the risks associated with low voter turnout and malicious proposals.
